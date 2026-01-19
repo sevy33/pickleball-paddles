@@ -1,0 +1,88 @@
+@if (paddle(); as p) {
+  <div class="detail-container">
+    <div class="top-section">
+      <div class="carousel-container">
+        @if (p.images.length > 0) {
+           <div class="carousel">
+             <button (click)="prevImage()" class="nav-btn">‹</button>
+             <img [src]="p.images[currentImageIndex()].imageUrl" class="main-img">
+             <button (click)="nextImage()" class="nav-btn">›</button>
+           </div>
+           <div class="dots">
+             @for (img of p.images; track img.id; let i = $index) {
+                <span [class.active]="i === currentImageIndex()" (click)="currentImageIndex.set(i)">•</span>
+             }
+           </div>
+        } @else {
+           <div class="placeholder">No Images</div>
+        }
+      </div>
+      
+      <div class="info">
+        <h1>{{ p.name }}</h1>
+        <h2>{{ p.brand }}</h2>
+        <p class="price">${{ p.price }}</p>
+        <p>{{ p.description }}</p>
+        <div class="specs">
+            <p><strong>Surface:</strong> {{ p.surface_material }}</p>
+            <p><strong>Core:</strong> {{ p.core_material }}</p>
+            <p><strong>Weight:</strong> {{ p.weight_oz }} oz</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-section">
+      <div class="reviews-header">
+        <h3>Reviews</h3>
+        <button (click)="showReviewForm.set(true)" class="btn-primary">Add Review</button>
+      </div>
+      
+      <div class="review-list">
+        @for (review of p.reviews; track review.id) {
+          <div class="review-card">
+            <div class="review-header">
+                <span class="reviewer">{{ review.reviewerName }}</span>
+                <span class="rating">{{ review.rating }}/5</span>
+            </div>
+            <p class="comment">{{ review.comment }}</p>
+            <small class="date">{{ review.created_at | date }}</small>
+          </div>
+        } @empty {
+          <p>No reviews yet.</p>
+        }
+      </div>
+    </div>
+  </div>
+
+  @if (showReviewForm()) {
+    <div class="modal-backdrop" (click)="showReviewForm.set(false)">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <h3>Write a Review</h3>
+        <div class="form-group">
+            <label>Name</label>
+            <input [(ngModel)]="newReview.reviewerName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Rating</label>
+            <select [(ngModel)]="newReview.rating" class="form-control">
+                <option [value]="5">5 - Excellent</option>
+                <option [value]="4">4 - Good</option>
+                <option [value]="3">3 - Average</option>
+                <option [value]="2">2 - Poor</option>
+                <option [value]="1">1 - Terrible</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Comment</label>
+            <textarea [(ngModel)]="newReview.comment" class="form-control"></textarea>
+        </div>
+        <div class="actions">
+            <button (click)="showReviewForm.set(false)">Cancel</button>
+            <button (click)="submitReview()" class="btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  }
+} @else {
+  <p>Loading...</p>
+}
