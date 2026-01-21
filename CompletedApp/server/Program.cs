@@ -100,9 +100,7 @@ public class PaddleImage
     public int PaddleId { get; set; }
     [JsonIgnore]
     public Paddle? Paddle { get; set; }
-    [JsonPropertyName("image_url")]
     public string ImageUrl { get; set; } = string.Empty;
-    [JsonPropertyName("is_primary")]
     public bool IsPrimary { get; set; }
 }
 
@@ -112,7 +110,6 @@ public class PaddleReview
     public int PaddleId { get; set; }
     [JsonIgnore]
     public Paddle? Paddle { get; set; }
-    [JsonPropertyName("reviewer_name")]
     public string ReviewerName { get; set; } = string.Empty;
     public int Rating { get; set; }
     public string? Comment { get; set; }

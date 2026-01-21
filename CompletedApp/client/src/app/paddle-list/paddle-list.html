@@ -13,7 +13,7 @@
         @if (paddle.images.length > 0) {
            <img [src]="paddle.images[0].imageUrl" alt="{{ paddle.name }}" class="paddle-thumb">
         } @else {
-           <div class="placeholder-img">No Image</div>
+           <img [src]="getPaddleImage(paddle.id)" alt="{{ paddle.name }}" class="paddle-thumb">
         }
         <div class="paddle-info">
             <h3>{{ paddle.name }}</h3>

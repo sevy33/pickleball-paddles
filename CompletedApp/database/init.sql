@@ -34,10 +34,10 @@ INSERT INTO paddles (name, brand, price, description, surface_material, core_mat
 ('Black Diamond Power', 'Six Zero', 180.00, 'Designed for power and pop.', 'Raw Carbon Fiber', 'Polymer Honeycomb', 8.1, true);
 
 INSERT INTO paddle_images (paddle_id, image_url, is_primary) VALUES
-(1, 'https://placehold.co/400x600?text=Joola+Hyperion', true),
-(1, 'https://placehold.co/400x600?text=Joola+Side', false),
-(2, 'https://placehold.co/400x600?text=Selkirk+Invikta', true),
-(3, 'https://placehold.co/400x600?text=Six+Zero+BD', true);
+(1, 'https://picsum.photos/seed/1/600/400', true),
+(1, 'https://picsum.photos/seed/2/600/400', false),
+(2, 'https://picsum.photos/seed/3/600/400', true),
+(3, 'https://picsum.photos/seed/4/600/400', true);
 
 INSERT INTO paddle_reviews (paddle_id, reviewer_name, rating, comment) VALUES
 (1, 'Ben Johns', 5, 'Best paddle I have ever used. Great spin.', '2023-01-15 10:00:00'),

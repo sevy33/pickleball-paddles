@@ -28,4 +28,8 @@ export class PaddleListComponent {
     this.paddleService.getPaddles(this.searchQuery(), this.minPrice(), this.maxPrice())
       .subscribe(paddles => this.paddles.set(paddles));
   }
+
+  getPaddleImage(id: number): string {
+    return `https://picsum.photos/seed/${id}/300/300`;
+  }
 }

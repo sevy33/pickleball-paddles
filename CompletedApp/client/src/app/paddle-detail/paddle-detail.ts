@@ -36,6 +36,10 @@ export class PaddleDetailComponent {
         this.currentImageIndex.set(0); 
     });
   }
+
+  getPaddleImage(id: number): string {
+    return `https://picsum.photos/seed/${id}/600/400`;
+  }
   
   nextImage() {
     const p = this.paddle();

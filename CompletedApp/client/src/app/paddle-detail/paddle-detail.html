@@ -14,7 +14,9 @@
              }
            </div>
         } @else {
-           <div class="placeholder">No Images</div>
+           <div class="carousel single-image">
+             <img [src]="getPaddleImage(p.id)" class="main-img">
+           </div>
         }
       </div>
       
