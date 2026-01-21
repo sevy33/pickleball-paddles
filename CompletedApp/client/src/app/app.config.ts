@@ -5,8 +5,8 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection(),
     provideRouter(routes, withComponentInputBinding()),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    provideZoneChangeDetection(),
   ]
 };
