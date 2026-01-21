@@ -39,17 +39,17 @@ export class PaddleDetailComponent {
   
   nextImage() {
     const p = this.paddle();
-    this.currentImageIndex.update(i => (i + 1) % p.images.length);
+    this.currentImageIndex.update(i => (i + 1) % p!.images.length);
   }
   
   prevImage() {
     const p = this.paddle();
-    this.currentImageIndex.update(i => (i - 1 + p.images.length) % p.images.length);
+    this.currentImageIndex.update(i => (i - 1 + p!.images.length) % p!.images.length);
   }
 
   submitReview() {
     const p = this.paddle();
-    if(pacman -Qs code) return;
+    if(p === null) return;
 
     this.newReview.paddleId = p.id;
     this.paddleService.addReview(this.newReview).subscribe(() => {

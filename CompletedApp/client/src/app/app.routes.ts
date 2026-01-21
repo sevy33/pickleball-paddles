@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { PaddleListComponent } from './paddle-list/paddle-list.component';
-import { PaddleDetailComponent } from './paddle-detail/paddle-detail.component';
+import { PaddleListComponent } from './paddle-list/paddle-list';
+import { PaddleDetailComponent } from './paddle-detail/paddle-detail';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'paddles', pathMatch: 'full' },
