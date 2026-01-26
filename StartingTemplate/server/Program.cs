@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using server.Data;
 using System.Text.Json.Serialization;
 // using Server.Data; // Uncomment when Data folder is populated
 
@@ -13,8 +14,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Register DbContext (Uncomment when PaddleContext is created)
-// builder.Services.AddDbContext<PaddleContext>(options =>
-//    options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<PaddleContext>(options =>
+   options.UseNpgsql(connectionString)
+          .UseSnakeCaseNamingConvention());
 
 builder.Services.AddCors(options =>
 {
