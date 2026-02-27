@@ -39,7 +39,7 @@ INSERT INTO paddle_images (paddle_id, image_url, is_primary) VALUES
 (2, 'https://picsum.photos/seed/3/600/400', true),
 (3, 'https://picsum.photos/seed/4/600/400', true);
 
-INSERT INTO paddle_reviews (paddle_id, reviewer_name, rating, comment) VALUES
+INSERT INTO paddle_reviews (paddle_id, reviewer_name, rating, comment, created_at) VALUES
 (1, 'Ben Johns', 5, 'Best paddle I have ever used. Great spin.', '2023-01-15 10:00:00'),
 (1, 'Amateur Andy', 4, 'A bit heavy but solid.', '2023-01-16 14:30:00'),
 (2, 'Power Player', 5, 'Insane power, ball flies off the face.', '2023-02-01 09:15:00'),
