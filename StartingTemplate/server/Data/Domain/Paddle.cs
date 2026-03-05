@@ -17,4 +17,6 @@ public class Paddle
     public string CoreMaterial { get; set; }
     public decimal WeightOz { get; set; }
     public bool IsApproved { get; set; }
+
+    public ICollection<PaddleImage> Images { get; set; }
 }

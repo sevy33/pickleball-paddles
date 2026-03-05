@@ -10,4 +10,6 @@ public class PaddleContext : DbContext
     }
 
     public DbSet<Domain.Paddle> Paddles { get; set; }
+
+    public DbSet<Domain.Review> Reviews { get; set; }
 }
