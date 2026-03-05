@@ -1,0 +1,7 @@
+<h1>Parent Component {{ name() }}</h1>
+<button (click)="changeName()">Change Name</button>
+
+<hr/>
+<app-child-hello-world [parent]="name()" (changeParent)="changeNameFromChild($event)"></app-child-hello-world>
+
+
