@@ -25,7 +25,11 @@ namespace server.Controllers
                 Name = p.Name,
                 Brand = p.Brand,
                 Price = p.Price,
-                ThumbnailUrl = p.Images != null && p.Images.Count > 0 ? p.Images.First().ImageUrl : null
+                ThumbnailUrl = p.Images != null && p.Images.Count > 0 ? p.Images.First().ImageUrl : null,
+                Description = p.Description,
+                SurfaceMaterial = p.SurfaceMaterial,
+                CoreMaterial = p.CoreMaterial,
+                WeightOz = p.WeightOz
             }).ToList();      
             return Ok(paddleDtos);
         }
@@ -45,7 +49,11 @@ namespace server.Controllers
                 Name = paddle.Name,
                 Brand = paddle.Brand,
                 Price = paddle.Price,
-                ThumbnailUrl = paddle.Images != null && paddle.Images.Count > 0 ? paddle.Images.First().ImageUrl : null
+                ThumbnailUrl = paddle.Images != null && paddle.Images.Count > 0 ? paddle.Images.First().ImageUrl : null,
+                Description = paddle.Description,
+                SurfaceMaterial = paddle.SurfaceMaterial,
+                CoreMaterial = paddle.CoreMaterial,
+                WeightOz = paddle.WeightOz
             };
 
             return Ok(paddleDto);
@@ -59,5 +67,9 @@ namespace server.Controllers
         public string Brand { get; set; }
         public string ThumbnailUrl { get; set; }
         public decimal Price { get; set; }
+        public string Description { get; set; }
+        public string SurfaceMaterial { get; set; }
+        public string CoreMaterial { get; set; }
+        public decimal WeightOz { get; set; }
     }
 }

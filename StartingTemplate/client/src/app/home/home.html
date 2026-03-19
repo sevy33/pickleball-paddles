@@ -1,0 +1,9 @@
+@if(isLoading()){
+    <div>Loading...</div>
+} @else {
+    <div style="display: flex;flex-direction: column; gap: 5px">
+        @for(paddle of paddles(); track paddle.id) {
+            <app-paddle-card [paddle]="paddle" />
+        }
+    </div>
+}

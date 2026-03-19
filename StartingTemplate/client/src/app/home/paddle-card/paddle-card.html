@@ -1,0 +1,23 @@
+<div class="paddle-card">
+    <img [src]="paddle().thumbnailUrl" [alt]="paddle().name" class="paddle-card__image" />
+    <div class="paddle-card__body">
+        <h2 class="paddle-card__name">{{ paddle().name }}</h2>
+        <p class="paddle-card__brand">{{ paddle().brand }}</p>
+        <p class="paddle-card__description">{{ paddle().description }}</p>
+        <div class="paddle-card__specs">
+            <div class="paddle-card__spec">
+                <span class="paddle-card__spec-label">Surface</span>
+                <span>{{ paddle().surfaceMaterial }}</span>
+            </div>
+            <div class="paddle-card__spec">
+                <span class="paddle-card__spec-label">Core</span>
+                <span>{{ paddle().coreMaterial }}</span>
+            </div>
+            <div class="paddle-card__spec">
+                <span class="paddle-card__spec-label">Weight</span>
+                <span>{{ paddle().weightOz }} oz</span>
+            </div>
+        </div>
+        <p class="paddle-card__price">${{ paddle().price }}</p>
+    </div>
+</div>
