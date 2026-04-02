@@ -34,7 +34,7 @@ namespace server.Controllers
             return Ok(paddleDtos);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("paddle")]
         public IActionResult GetPaddle(int id)
         {
             var paddle = _context.Paddles.Include(x => x.Images).FirstOrDefault(p => p.Id == id);

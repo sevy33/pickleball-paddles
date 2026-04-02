@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { PaddleDto } from '../paddle-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-paddle-card',
@@ -9,4 +10,13 @@ import { PaddleDto } from '../paddle-service';
 })
 export class PaddleCard {
   paddle = input.required<PaddleDto>();
+
+  private router = inject(Router);
+
+  routeToPaddleDetail() {
+    this.router.navigate(['/paddle'], { queryParams: { id: this.paddle().id } });
+    
+  }   
 }
+
+

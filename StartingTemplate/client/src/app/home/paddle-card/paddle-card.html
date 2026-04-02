@@ -1,4 +1,4 @@
-<div class="paddle-card">
+<div (click)="routeToPaddleDetail()" class="paddle-card">
     <img [src]="paddle().thumbnailUrl" [alt]="paddle().name" class="paddle-card__image" />
     <div class="paddle-card__body">
         <h2 class="paddle-card__name">{{ paddle().name }}</h2>

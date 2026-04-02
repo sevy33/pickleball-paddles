@@ -12,6 +12,10 @@ export class PaddleService {
   getPaddles() {
     return this.http.get<PaddleDto[]>(`${this.baseUrl}/api/paddles`);
   }
+
+  getPaddle(id: number) {
+    return this.http.get<PaddleDto>(`${this.baseUrl}/api/paddles/paddle`, { params: { id: id.toString() } });
+  }
 }
 
 export interface PaddleDto {
